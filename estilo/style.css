@@ -1,0 +1,374 @@
+/* ============================================ */
+/* RESET Y BASE - Normalización de estilos      */
+/* ============================================ */
+
+* {
+    margin: 0;           /* Elimina margen predeterminado de todos los elementos */
+    padding: 0;          /* Elimina padding predeterminado de todos los elementos */
+    box-sizing: border-box;  /* Incluye border y padding en el ancho total del elemento */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Fuente moderna y legible */
+    line-height: 1.6;    /* Altura de línea para mejor legibilidad (1.6 = 160% del tamaño) */
+    color: #2c3e2f;      /* Color de texto verde oscuro para todo el cuerpo */
+    scroll-behavior: smooth;  /* Desplazamiento suave al hacer clic en anclas */
+}
+
+.container {
+    max-width: 1200px;   /* Ancho máximo del contenedor principal */
+    margin: 0 auto;      /* Centra el contenedor horizontalmente (auto = margen automático) */
+    padding: 0 20px;     /* Espaciado interno: 0 arriba/abajo, 20px izquierda/derecha */
+}
+
+.section-title {
+    font-size: 2.5rem;   /* Tamaño de fuente grande (2.5rem = 40px si base es 16px) */
+    text-align: center;  /* Centra el texto horizontalmente */
+    margin-bottom: 2rem; /* Margen inferior de 2rem (32px aproximadamente) */
+    color: #2d6a4f;      /* Color verde medio para títulos de sección */
+    font-weight: 600;    /* Peso de fuente seminegrita (600 de 400-normal a 700-bold) */
+}
+
+/* ============================================ */
+/* NAVBAR FIJA - Barra de navegación fija       */
+/* ============================================ */
+
+.navbar {
+    position: fixed;     /* Fija la barra en la ventana al hacer scroll */
+    top: 0;              /* Posiciona la barra en la parte superior */
+    width: 100%;         /* Ocupa todo el ancho de la pantalla */
+    background: rgba(255, 255, 255, 0.95);  /* Blanco con 95% de opacidad */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra: offset X 0, Y 2px, blur 10px, negro 10% */
+    z-index: 1000;       /* Capa superior para estar sobre otros elementos */
+    backdrop-filter: blur(5px);  /* Desenfoque de fondo (efecto vidrio) */
+}
+
+.nav-container {
+    max-width: 1200px;   /* Ancho máximo del contenedor de navegación */
+    margin: 0 auto;      /* Centra horizontalmente */
+    padding: 1rem 20px;  /* Padding: 1rem arriba/abajo, 20px lados */
+    display: flex;       /* Activa Flexbox para alinear elementos */
+    justify-content: space-between;  /* Distribuye espacio entre logo y menú */
+    align-items: center; /* Centra verticalmente los elementos hijos */
+}
+
+.logo {
+    font-size: 1.5rem;   /* Tamaño de fuente de 1.5rem (24px) */
+    font-weight: bold;   /* Texto en negrita */
+    color: #1b4d3e;      /* Color verde muy oscuro */
+}
+
+.logo i {
+    color: #2d6a4f;      /* Color del ícono dentro del logo */
+}
+
+.nav-menu {
+    display: flex;       /* Activa Flexbox para el menú */
+    list-style: none;    /* Elimina viñetas de la lista */
+    gap: 2rem;           /* Espacio entre elementos del menú (2rem = 32px) */
+}
+
+.nav-link {
+    text-decoration: none;  /* Elimina subrayado de los enlaces */
+    color: #2c3e2f;         /* Color verde oscuro para el texto */
+    font-weight: 500;       /* Peso medio (entre normal y negrita) */
+    transition: color 0.3s; /* Transición suave al cambiar color (0.3 segundos) */
+}
+
+.nav-link:hover {
+    color: #52b788;         /* Cambia a verde claro al pasar el mouse */
+}
+
+.hamburger {
+    display: none;       /* Oculta el ícono hamburguesa en escritorio */
+    font-size: 1.8rem;   /* Tamaño grande para el ícono */
+    cursor: pointer;     /* Cambia cursor a mano (indicando clickeable) */
+    color: #2d6a4f;      /* Color verde para el ícono */
+}
+
+/* ============================================ */
+/* HERO - Sección principal con imagen          */
+/* ============================================ */
+
+.hero {
+    height: 100vh;       /* Alto: 100% del viewport (pantalla completa) */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../foto/volcan.jpg');
+    /* Gradiente oscuro + imagen de fondo combinados */
+    background-size: cover;      /* La imagen cubre todo el espacio disponible */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Imagen fija al hacer scroll (efecto parallax) */
+    display: flex;               /* Activa Flexbox */
+    align-items: center;         /* Centra contenido verticalmente */
+    justify-content: center;     /* Centra contenido horizontalmente */
+    text-align: center;          /* Centra el texto */
+    position: relative;          /* Para posicionar elementos hijos absolutos */
+}
+
+.hero-content {
+    color: white;        /* Texto blanco para contraste */
+    z-index: 2;          /* Capa por encima del overlay */
+    padding: 20px;       /* Espaciado interno de 20px */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;   /* Tamaño muy grande para título principal (56px) */
+    margin-bottom: 1rem; /* Separación inferior de 1rem (16px) */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mejorar legibilidad */
+}
+
+.hero-content p {
+    font-size: 1.3rem;   /* Tamaño de 1.3rem (20.8px) */
+    margin-bottom: 2rem; /* Separación inferior de 2rem (32px) */
+}
+
+.btn-hero {
+    display: inline-block;  /* Permite padding y margin respetando el flujo inline */
+    background: #f4a261;    /* Color naranja cálido */
+    color: white;           /* Texto blanco */
+    padding: 12px 30px;     /* Padding: 12px vertical, 30px horizontal */
+    text-decoration: none;  /* Sin subrayado */
+    border-radius: 50px;    /* Bordes redondeados (50px = circular) */
+    font-weight: bold;      /* Texto en negrita */
+    transition: transform 0.3s, background 0.3s; /* Transiciones suaves */
+}
+
+.btn-hero:hover {
+    background: #e76f51;    /* Naranja más oscuro al pasar mouse */
+    transform: scale(1.05); /* Aumenta tamaño 5% al hacer hover */
+}
+
+/* ============================================ */
+/* NOSOTROS - Sección descriptiva               */
+/* ============================================ */
+
+.nosotros {
+    padding: 80px 0;     /* Padding vertical 80px, horizontal 0 */
+    background: #fefae0; /* Color amarillo muy claro / crema */
+}
+
+.nosotros-grid {
+    display: grid;                /* Activa CSS Grid */
+    grid-template-columns: 1fr 1fr;  /* Dos columnas iguales (1 fracción cada una) */
+    gap: 3rem;                   /* Espacio entre columnas de 3rem (48px) */
+    align-items: center;         /* Centra verticalmente los items del grid */
+}
+
+.nosotros-texto p {
+    margin-bottom: 1rem;         /* Separación inferior entre párrafos */
+    font-size: 1.3rem;           /* Tamaño ligeramente mayor al normal */
+}
+
+.nosotros-texto i {
+    color: #2d6a4f;              /* Color verde para íconos */
+    margin-right: 8px;           /* Separación derecha del ícono */
+}
+
+.nosotros-img img {
+    width: 100%;                 /* Imagen ocupa 100% del contenedor */
+    border-radius: 20px;         /* Bordes redondeados de 20px */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* ============================================ */
+/* SERVICIOS - CSS Grid para tarjetas           */
+/* ============================================ */
+
+.servicios {
+    padding: 80px 0;                    /* Padding vertical */
+    background: white;                  /* Fondo blanco */
+}
+
+.servicios-grid {
+    display: grid;                      /* Grid activado */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                                        /* Columnas responsivas */
+    gap: 2rem;                          /* Espacio entre tarjetas */
+}
+
+.servicio-card {
+    background: #f8f9fa;                /* Fondo gris claro */
+    padding: 2rem;                      /* Padding interno */
+    border-radius: 20px;                /* Bordes redondeados */
+    text-align: center;                 /* Texto centrado */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animación suave */
+    display: flex;                      /* Flexbox interno */
+    flex-direction: column;             /* Columna vertical */
+    align-items: center;                /* Centrado horizontal */
+    font-size: 3rem;                    /* Emojis grandes (48px) */
+}
+
+.servicio-card h3 {
+    font-size: 1.5rem;                  /* Título grande */
+    margin: 1rem 0 0.5rem 0;            /* Margen superior/inferior */
+    color: #1b4d3e;                     /* Verde oscuro */
+    font-weight: 600;                   /* Seminegrita */
+}
+
+.servicio-card p {
+    font-size: 0.95rem;                 /* Texto normal */
+    line-height: 1.5;                   /* Altura de línea */
+    color: #555;                        /* Gris oscuro */
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);       /* Eleva 10px */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Sombra más grande */
+}
+
+/* ============================================ */
+/* FORMULARIO - Validación con JavaScript       */
+/* ============================================ */
+
+.contacto {
+    padding: 80px 0;         /* Padding vertical 80px */
+    background: #e9ecef;     /* Gris azulado claro */
+}
+
+.form-wrapper {
+    max-width: 700px;        /* Ancho máximo del formulario */
+    margin: 0 auto;          /* Centrado horizontal */
+    background: white;       /* Fondo blanco */
+    padding: 2rem;           /* Espaciado interno */
+    border-radius: 20px;     /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;   /* Separación inferior entre campos */
+}
+
+label {
+    display: block;          /* Ocupa todo el ancho disponible */
+    margin-bottom: 0.5rem;   /* Separación inferior de la etiqueta */
+    font-weight: 600;        /* Texto seminegrita */
+    color: #2c3e2f;          /* Color verde oscuro */
+}
+
+input, select {
+    width: 100%;             /* Ocupa todo el ancho del contenedor */
+    padding: 12px;           /* Espaciado interno */
+    border: 1px solid #ccc;  /* Borde gris de 1px */
+    border-radius: 8px;      /* Bordes ligeramente redondeados */
+    font-size: 1rem;         /* Tamaño de fuente normal (16px) */
+    transition: border 0.3s; /* Transición suave para borde */
+}
+
+input:focus, select:focus {
+    border-color: #2d6a4f;   /* Borde verde al enfocar */
+    outline: none;            /* Elimina contorno por defecto del navegador */
+}
+
+.error-message {
+    color: #e63946;          /* Color rojo para mensajes de error */
+    font-size: 0.8rem;       /* Tamaño pequeño (12.8px) */
+    margin-top: 5px;         /* Separación superior */
+    display: block;          /* Ocupa línea completa */
+    min-height: 20px;        /* Altura mínima para evitar saltos */
+}
+
+.btn-submit {
+    background: #2d6a4f;     /* Fondo verde */
+    color: white;            /* Texto blanco */
+    border: none;            /* Sin borde */
+    padding: 12px 25px;      /* Espaciado interno */
+    font-size: 1.1rem;       /* Tamaño ligeramente mayor */
+    border-radius: 40px;     /* Bordes muy redondeados */
+    cursor: pointer;         /* Cursor de mano */
+    width: 100%;             /* Ocupa todo el ancho */
+    transition: background 0.3s; /* Transición suave de color */
+}
+
+.btn-submit:hover {
+    background: #1b4d3e;     /* Verde más oscuro al pasar mouse */
+}
+
+.form-mensaje {
+    margin-top: 20px;        /* Separación superior */
+    padding: 10px;           /* Espaciado interno */
+    border-radius: 8px;      /* Bordes redondeados */
+    text-align: center;      /* Texto centrado */
+    font-weight: bold;       /* Texto en negrita */
+    display: none;           /* Oculto por defecto */
+}
+
+.form-mensaje.exito {
+    background: #d4edda;     /* Fondo verde claro */
+    color: #155724;          /* Texto verde oscuro */
+    display: block;          /* Visible */
+}
+
+.form-mensaje.error {
+    background: #f8d7da;     /* Fondo rojo claro */
+    color: #721c24;          /* Texto rojo oscuro */
+    display: block;          /* Visible */
+}
+
+/* ============================================ */
+/* FOOTER - Pie de página                       */
+/* ============================================ */
+
+.footer {
+    background: #1b4d3e;     /* Fondo verde oscuro */
+    color: white;            /* Texto blanco */
+    text-align: center;      /* Texto centrado */
+    padding: 2rem 0;         /* Padding vertical de 2rem */
+}
+
+.social {
+    display: flex;           /* Flexbox para íconos sociales */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 1.5rem;             /* Espacio entre íconos (24px) */
+    margin-bottom: 1rem;     /* Separación inferior */
+}
+
+.social a {
+    color: white;            /* Íconos blancos */
+    font-size: 1.5rem;       /* Tamaño de 24px */
+    transition: color 0.3s;  /* Transición suave de color */
+}
+
+.social a:hover {
+    color: #f4a261;          /* Color naranja al pasar mouse */
+}
+
+/* ============================================ */
+/* RESPONSIVE - Menú hamburguesa y móviles      */
+/* ============================================ */
+
+@media (max-width: 768px) {  /* Reglas aplican solo en pantallas menores a 768px */
+    
+    .hamburger {
+        display: block;      /* Muestra ícono hamburguesa en móviles */
+    }
+    
+    .nav-menu {
+        position: fixed;     /* Posición fija para el menú desplegable */
+        left: -100%;         /* Oculta el menú fuera de pantalla (izquierda negativa) */
+        top: 70px;           /* Distancia desde arriba (debajo de navbar) */
+        flex-direction: column;  /* Cambia a columna en lugar de fila */
+        background-color: white; /* Fondo blanco */
+        width: 100%;         /* Ocupa todo el ancho */
+        text-align: center;  /* Texto centrado */
+        transition: 0.3s;    /* Transición suave al aparecer/desaparecer */
+        padding: 2rem 0;     /* Padding vertical de 2rem */
+        gap: 1.5rem;         /* Espacio entre elementos */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra inferior */
+    }
+    
+    .nav-menu.active {
+        left: 0;             /* Mueve menú a la posición visible */
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;     /* Título más pequeño en móviles (32px) */
+    }
+    
+    .nosotros-grid {
+        grid-template-columns: 1fr;  /* Una sola columna en móviles */
+        text-align: center;  /* Centra texto */
+    }
+    
+    .section-title {
+        font-size: 2rem;     /* Tamaño de título menor en móviles */
+    }
+}

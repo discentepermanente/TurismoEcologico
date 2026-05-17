@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>EcoTurismo El Salvador | Alojamiento Turístico</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR FIJA ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                🏔️ EcoTurismo El Salvador
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                ☰
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== SECCIÓN HERO ==================== -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Descanso rodeado de naturaleza</h1>
+            <p>Vive una experiencia única en nuestro refugio ecológico</p>
+            <a href="#contacto" class="btn-hero">Reserva ahora →</a>
+        </div>
+    </section>
+
+    <!-- ==================== NOSOTROS ==================== -->
+    <section id="nosotros" class="nosotros">
+        <div class="container">
+            <h2 class="section-title">🌿 Nosotros</h2>
+            <div class="nosotros-grid">
+                <div class="nosotros-texto">
+                    <p>EcoTurismo El Salvador nace del amor por la naturaleza y el ecoturismo. Ofrecemos un refugio sustentable donde cada detalle está pensado para conectar con la serenidad del entorno.</p>
+                    <p>📍 Ubicados en medio del bosque nativo, contamos con 5 años de experiencia recibiendo viajeros del mundo.</p>
+                    <p>✅ Eco-friendly <br>
+                    ✅ Aguas termales privadas <br>
+                    ✅ Guías locales expertos</p>
+                </div>
+                <div class="nosotros-img">
+                    <img src="foto/tazumal.jpg" alt="Tazumal">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICIOS (CSS Grid + Flex) ==================== -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <h2 class="section-title">🏕️ Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    🛌
+                    <h3>Habitaciones Premium</h3>
+                    <p>Vista al valle, chimenea y baño privado con hidromasaje.</p>
+                </div>
+                <div class="servicio-card">
+                    🍽️
+                    <h3>Restaurante orgánico</h3>
+                    <p>Comida local, vegetariana y opciones sin gluten.</p>
+                </div>
+                <div class="servicio-card">
+                    🥾
+                    <h3>Senderismo guiado</h3>
+                    <p>Rutas diarias con monitores bilingües.</p>
+                </div>
+                <div class="servicio-card">
+                    💆‍♀️
+                    <h3>Spa & Aguas termales</h3>
+                    <p>Circuito de aguas y masajes relajantes.</p>
+                </div>
+                <div class="servicio-card">
+                    📶
+                    <h3>WiFi de alta velocidad</h3>
+                    <p>Conexión satelital en todo el refugio.</p>
+                </div>
+                <div class="servicio-card">
+                    🚗
+                    <h3>Parking gratuito</h3>
+                    <p>Estacionamiento vigilado 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FORMULARIO CON VALIDACIÓN JS ==================== -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2 class="section-title">📝 Solicita tu reserva</h2>
+            <div class="form-wrapper">
+                <form id="reservaForm" class="formulario">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Rodríguez">
+                        <small class="error-message" id="errorNombre"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" placeholder="ana@correo.com">
+                        <small class="error-message" id="errorEmail"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+569 1234 5678">
+                        <small class="error-message" id="errorTelefono"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha de llegada *</label>
+                        <input type="date" id="fecha" name="fecha">
+                        <small class="error-message" id="errorFecha"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="personas">Número de personas *</label>
+                        <select id="personas" name="personas">
+                            <option value="">Selecciona...</option>
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5">5+ personas</option>
+                        </select>
+                        <small class="error-message" id="errorPersonas"></small>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar solicitud 📨</button>
+                </form>
+                <div id="formMensaje" class="form-mensaje"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="social">
+                    <a href="#">📘</a>
+                    <a href="#">📷</a>
+                    <a href="#">💬</a>
+                    <a href="#">⭐</a>
+                </div>
+                <p>&copy; 2026 EcoTurismo El Salvador. Todos los derechos reservados.</p>
+                <p>🌱 Turismo responsable - Desarrollado con 💚 para el curso de programación</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
