@@ -92,7 +92,7 @@ body {
 
 .hero {
     height: 100vh;       /* Alto: 100% del viewport (pantalla completa) */
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../foto/volcan.jpg');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../foto/Aguas-Termales-El-Playon.webp');
     /* Gradiente oscuro + imagen de fondo combinados */
     background-size: cover;      /* La imagen cubre todo el espacio disponible */
     background-position: center; /* Centra la imagen de fondo */
